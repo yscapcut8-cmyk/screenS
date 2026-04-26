@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="pt">
+
+<!-- Mirrored from meubiooficial.com/nataliaverron by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Apr 2026 16:24:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Clique nos três pontinhos →">
+
+<link rel="preload" as="image" href="tutorial.gif" fetchpriority="high">
+
+<meta property="og:title" content="Clique nos três pontinhos →">
+<meta property="og:description" content="Siga o tutorial para acessar o Telegram">
+<meta property="og:type" content="website">
+<meta property="og:image" content="tutorial.gif">
+
+<title>Clique nos três pontinhos →</title>
+
+<style>
+:root {
+    --bg: #000;
+    --card: #111;
+    --text: #fff;
+    --muted: #aaa;
+    --accent: #e11d1d;
+    --accent-light: #ff4444;
+    --border: #333;
+    --shadow: 0 8px 30px rgba(0,0,0,0.5);
+    --warning: #f59e0b;
+    --warning-light: #fbbf24;
+    --error: #ef4444;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 18px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.card {
+    position: relative;
+    background: var(--card);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+    overflow: visible;
+    border: 1px solid var(--border);
+}
+
+.guide-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    font-size = 22px;
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(6px); }
+    60% { transform: translateY(3px); }
+}
+
+.visual {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--border);
+    border: 2px solid var(--border);
+    position: relative;
+    min-height: 200px;
+}
+
+.visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
+.visual img.loaded {
+    opacity: 1;
+}
+
+.gif-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #111;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 14px;
+    animation: placeholderPulse 2s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.gif-placeholder.visible {
+    display: flex;
+}
+
+@keyframes placeholderPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+}
+
+.steps {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.step {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.num {
+    color: var(--accent);
+    font-weight: 800;
+    min-width: 22px;
+    font-size: 15px;
+}
+
+.txt {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.txt strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.cta {
+    margin-top: 12px;
+}
+
+.btn-main {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(225, 29, 29, 0.4);
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-main:hover {
+    background: var(--accent-light);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(225, 29, 29, 0.6);
+}
+
+.btn-main:active {
+    transform: translateY(0);
+}
+
+.btn-main.loading {
+    color: transparent;
+    position: relative;
+}
+
+.btn-main.loading::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+.btn-main:disabled {
+    background: #333;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    border: 1px solid #444;
+}
+
+.btn-main:disabled:hover {
+    background: #333;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-main.tiktok-disabled {
+    background: var(--accent);
+    color: #fff;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    animation: tiktokPulse 2s infinite;
+}
+
+.btn-main.tiktok-disabled:hover {
+    background: var(--accent);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-main.soft-unlock {
+    background: var(--warning);
+    color: #000;
+    animation: softUnlockPulse 2s infinite;
+}
+
+.btn-main.soft-unlock:hover {
+    background: var(--warning-light);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes tiktokPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(225, 29, 29, 0.7);
+    }
+    70% { 
+        box-shadow: 0 0 0 10px rgba(225, 29, 29, 0);
+    }
+}
+
+@keyframes softUnlockPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+    }
+    70% { 
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+    }
+}
+
+.detection-status {
+    margin-top: 10px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    min-height: 20px;
+}
+
+.detection-status.tiktok-warning {
+    color: #e11d1d;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.detection-status.soft-unlock-countdown {
+    color: var(--warning);
+    font-weight: 700;
+    font-size: 13px;
+    animation: softUnlockPulse 2s infinite;
+}
+
+.lang-selector {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 8px 12px;
+    border-radius: 99px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: #111;
+}
+
+.lang-dropdown {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    min-width: 130px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.lang-dropdown.open {
+    display: flex;
+}
+
+.lang-opt {
+    background: none;
+    border: 0;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    color: #111;
+}
+
+.lang-opt:hover {
+    background: #f5f5f5;
+}
+
+.webview-warning {
+    display: none;
+    background: linear-gradient(135deg, var(--warning), var(--warning-light));
+    color: #000;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    animation: pulse 2s infinite;
+}
+
+.webview-warning.visible {
+    display: block;
+}
+
+.soft-unlock-notice {
+    display: none;
+    background: linear-gradient(135deg, var(--warning), var(--warning-light));
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    animation: pulse 2s infinite;
+}
+
+.soft-unlock-notice.visible {
+    display: block;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@media (max-width: 420px) {
+    .wrap {
+        padding: 12px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    
+    .card {
+        padding: 12px;
+    }
+    
+    .guide-title {
+        font-size: 16px;
+    }
+    
+    .arrow {
+        font-size: 20px;
+    }
+    
+    .txt {
+        font-size: 14px;
+    }
+    
+    .btn-main {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .wrap {
+        padding: 10px;
+        padding-top: 45px;
+        padding-bottom: 15px;
+    }
+    
+    .guide-title {
+        font-size: 15px;
+    }
+    
+    .txt {
+        font-size: 13px;
+    }
+    
+    .btn-main {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body oncontextmenu="return false">
+
+<div id="app-root"></div>
+
+<script>
+(function() {
+    'use strict';
+    
+    // ==================================================
+    // CONFIGURAÇÃO TOTALMENTE UNIFICADA
+    // ==================================================
+    window.__GEO__ = window.__GEO__ || {"country":"BR","currency":"brl","language":"pt","bot":"https:\/\/t.me\/+PRA_EnAJlk4yY2Ex","geo_source":"cf_header","bot_valid":true,"timestamp":1776011104,"config":{"auto_redirect_delay":1500,"max_tiktok_checks":30,"soft_unlock_delay":4000,"min_unlock_delay":3000,"max_unlock_delay":5000,"webview_check_retry_delay":1000,"max_webview_retries":3}};
+    
+    const CONFIG = {
+        AUTO_REDIRECT_DELAY: window.__GEO__.config.auto_redirect_delay,
+        MAX_TIKTOK_CHECKS: window.__GEO__.config.max_tiktok_checks,
+        SOFT_UNLOCK_DELAY: window.__GEO__.config.soft_unlock_delay,
+        MIN_UNLOCK_DELAY: window.__GEO__.config.min_unlock_delay,
+        MAX_UNLOCK_DELAY: window.__GEO__.config.max_unlock_delay,
+        WEBVIEW_CHECK_RETRY_DELAY: window.__GEO__.config.webview_check_retry_delay,
+        MAX_WEBVIEW_RETRIES: window.__GEO__.config.max_webview_retries,
+        TIMESTAMP: window.__GEO__.timestamp
+    };
+    
+    const LANG_CONFIG = {
+        pt: { flag: '🇧🇷', name: 'PT' },
+        en: { flag: '🇺🇸', name: 'EN' },
+        es: { flag: '🇪🇸', name: 'ES' }
+    };
+    
+    const TEXTS = {
+        pt: {
+            title: "SIGA O TUTORIAL ABAIXO",
+            step1: 'Toque nos <strong>três pontinhos</strong> (canto superior da tela)',
+            step2: 'Escolha <strong>"Abrir no navegador"</strong>',
+            step3: 'Agora toque no botão vermelho para abrir o Telegram',
+            button: "ABRIR TELEGRAM",
+            buttonLoading: "REDIRECIONANDO...",
+            buttonTikTok: "ABRA NO NAVEGADOR PRIMEIRO",
+            buttonSoftUnlock: "DESBLOQUEANDO EM {seconds}S...",
+            redirecting: "REDIRECIONANDO EM 1S...",
+            gifLoading: "CARREGANDO TUTORIAL...",
+            webviewWarning: "Abra no navegador para melhor experiência",
+            softUnlockNotice: "Desbloqueio automático em {seconds} segundos...",
+            tiktokDetected: "TikTok detectado - Abra no navegador",
+            softUnlockActive: "Verificando ambiente seguro..."
+        },
+        es: {
+            title: "SIGUE EL TUTORIAL",
+            step1: 'Toca los <strong>tres puntos</strong> (esquina superior de la pantalla)',
+            step2: 'Elige <strong>"Abrir en el navegador"</strong>',
+            step3: 'Ahora toca el botón rojo para abrir Telegram',
+            button: "ABRIR TELEGRAM",
+            buttonLoading: "REDIRIGIENDO...",
+            buttonTikTok: "ABRE EN EL NAVEGADOR PRIMEIRO",
+            buttonSoftUnlock: "DESBLOQUEANDO EN {seconds}S...",
+            redirecting: "REDIRIGIENDO EN 1S...",
+            gifLoading: "CARGANDO TUTORIAL...",
+            webviewWarning: "Abre en el navegador para melhor experiência",
+            softUnlockNotice: "Desbloqueo automático en {seconds} segundos...",
+            tiktokDetected: "TikTok detectado - Abre en el navegador",
+            softUnlockActive: "Verificando entorno seguro..."
+        },
+        en: {
+            title: "FOLLOW THE TUTORIAL",
+            step1: 'Tap the <strong>three dots</strong> (top of the screen)',
+            step2: 'Choose <strong>"Open in browser"</strong>',
+            step3: 'Now tap the red button to open Telegram',
+            button: "OPEN TELEGRAM",
+            buttonLoading: "REDIRECTING...",
+            buttonTikTok: "OPEN IN BROWSER FIRST",
+            buttonSoftUnlock: "UNLOCKING IN {seconds}S...",
+            redirecting: "REDIRECTING IN 1S...",
+            gifLoading: "LOADING TUTORIAL...",
+            webviewWarning: "Open in browser for better experience",
+            softUnlockNotice: "Auto-unlock in {seconds} seconds...",
+            tiktokDetected: "TikTok detected - Open in browser",
+            softUnlockActive: "Checking secure environment..."
+        }
+    };
+    
+    // ==================================================
+    // SISTEMA DE ESTADO CENTRALIZADO
+    // ==================================================
+    class EnvironmentManager {
+        constructor() {
+            this.state = {
+                // Detecção de ambiente (somente leitura)
+                isTikTok: false,
+                isWebView: false,
+                
+                // Controle de fluxo
+                softUnlocked: false,
+                webviewBlocked: false,
+                webviewRetryCount: 0,
+                ready: false,
+                
+                // Timers
+                tiktokDetectionTime: null,
+                softUnlockTimer: null,
+                softUnlockCountdown: null,
+                autoRedirect: null,
+                webviewChecker: null,
+                
+                // Dados persistentes
+                country: window.__GEO__.country,
+                currency: window.__GEO__.currency,
+                language: window.__GEO__.language,
+                bot: window.__GEO__.bot,
+                botValid: window.__GEO__.bot_valid !== false,
+                geoSource: window.__GEO__.geo_source,
+                timestamp: window.__GEO__.timestamp
+            };
+        }
+        
+        // ==================================================
+        // DETECÇÃO DE AMBIENTE (ÚNICA FONTE DA VERDADE)
+        // ==================================================
+        detectEnvironment() {
+            const ua = navigator.userAgent.toLowerCase();
+            
+            // MODIFICAÇÃO CRÍTICA: TikTok WebView deve ser tratado como WebView bloqueado
+            // Qualquer user agent contendo tiktok, musical, douyin ou aweme deve ser considerado WebView
+            const isTikTokWebView = /(tiktok|musical|douyin|aweme)/i.test(ua);
+            
+            // WebView tem prioridade absoluta - AGORA INCLUINDO TIKTOK WEBVIEW
+            const newIsWebView = ua.includes('wv') || 
+                ua.includes('webview') || 
+                /(instagram|facebook|fb_iab|twitter|whatsapp|messenger|snapchat|pinterest|linkedin)/i.test(ua) ||
+                isTikTokWebView;
+            
+            // TikTok normal (não WebView) só é detectado se não for WebView e tiver referrer do TikTok
+            const newIsTikTok = !newIsWebView && (
+                document.referrer.includes('tiktok.com') || 
+                document.referrer.includes('douyin.com')
+            );
+            
+            // Se mudou de WebView para não-WebView, resetar contador
+            if (this.state.isWebView && !newIsWebView) {
+                this.state.webviewRetryCount = 0;
+                this.state.webviewBlocked = false;
+            }
+            
+            this.state.isWebView = newIsWebView;
+            this.state.isTikTok = newIsTikTok;
+            
+            // WebView bloqueia tudo imediatamente (incluindo TikTok WebView)
+            if (this.state.isWebView) {
+                this.state.softUnlocked = false;
+                this.state.webviewBlocked = true;
+                this.state.ready = false;
+                this.cancelSoftUnlock();
+                return true; // Mudança significativa
+            }
+            
+            return false; // Sem mudança significativa
+        }
+        
+        // ==================================================
+        // CONTROLE DE SOFT UNLOCK
+        // ==================================================
+        startSoftUnlock() {
+            if (this.state.softUnlocked || !this.state.tiktokDetectionTime) return;
+            
+            const detectionTime = this.state.tiktokDetectionTime;
+            const now = Date.now();
+            const elapsed = now - detectionTime;
+            
+            const unlockDelay = Math.max(
+                CONFIG.MIN_UNLOCK_DELAY,
+                Math.min(CONFIG.MAX_UNLOCK_DELAY, CONFIG.SOFT_UNLOCK_DELAY)
+            );
+            
+            const timeLeft = Math.max(0, unlockDelay - elapsed);
+            
+            if (timeLeft <= 0) {
+                this.attemptSoftUnlock();
+                return;
+            }
+            
+            this.updateSoftUnlockUI(Math.ceil(timeLeft / 1000));
+            
+            let secondsLeft = Math.ceil(timeLeft / 1000);
+            this.state.softUnlockCountdown = setInterval(() => {
+                secondsLeft--;
+                if (secondsLeft <= 0) {
+                    clearInterval(this.state.softUnlockCountdown);
+                    this.attemptSoftUnlock();
+                } else {
+                    this.updateSoftUnlockUI(secondsLeft);
+                }
+            }, 1000);
+            
+            this.state.softUnlockTimer = setTimeout(() => {
+                if (!this.state.softUnlocked) {
+                    this.attemptSoftUnlock();
+                }
+            }, timeLeft);
+        }
+        
+        attemptSoftUnlock() {
+            // Verificação única e centralizada
+            if (this.state.isWebView || this.detectEnvironment()) {
+                this.cancelSoftUnlockDueToWebView();
+                return;
+            }
+            
+            this.performSoftUnlock();
+        }
+        
+        performSoftUnlock() {
+            // Verificação final antes de conceder desbloqueio
+            if (this.state.isWebView) {
+                this.cancelSoftUnlockDueToWebView();
+                return;
+            }
+            
+            this.state.softUnlocked = true;
+            this.state.ready = true;
+            
+            this.cancelSoftUnlock();
+            this.stopWebViewChecker();
+            
+            this.updateUIForUnlockedState();
+            // TikTok NÃO deve iniciar auto-redirect, apenas navegador real
+            if (!this.state.isTikTok) {
+                this.startAutoRedirect();
+            }
+        }
+        
+        cancelSoftUnlockDueToWebView() {
+            this.state.webviewBlocked = true;
+            this.state.softUnlocked = false;
+            this.state.ready = false;
+            this.state.webviewRetryCount++;
+            
+            this.cancelSoftUnlock();
+            this.updateUIForWebViewBlocked();
+            
+            // Tentativa limitada após bloqueio por WebView
+            if (this.state.webviewRetryCount <= CONFIG.MAX_WEBVIEW_RETRIES) {
+                setTimeout(() => {
+                    if (!this.state.isWebView) {
+                        this.state.webviewBlocked = false;
+                        this.startSoftUnlock();
+                    }
+                }, CONFIG.WEBVIEW_CHECK_RETRY_DELAY);
+            }
+        }
+        
+        cancelSoftUnlock() {
+            clearTimeout(this.state.softUnlockTimer);
+            clearInterval(this.state.softUnlockCountdown);
+            this.state.softUnlockTimer = null;
+            this.state.softUnlockCountdown = null;
+        }
+        
+        // ==================================================
+        // CONTROLE DE WEBVIEW CHECKER
+        // ==================================================
+        startWebViewChecker() {
+            // Apenas se necessário e ainda não iniciado
+            if (this.state.webviewChecker || this.state.softUnlocked) return;
+            
+            this.state.webviewChecker = setInterval(() => {
+                const changed = this.detectEnvironment();
+                
+                if (changed && !this.state.isWebView) {
+                    // Ambiente mudou - recarregar para reiniciar lógica
+                    setTimeout(() => window.location.reload(), 300);
+                }
+            }, 1000);
+        }
+        
+        stopWebViewChecker() {
+            if (this.state.webviewChecker) {
+                clearInterval(this.state.webviewChecker);
+                this.state.webviewChecker = null;
+            }
+        }
+        
+        // ==================================================
+        // CONTROLE DE REDIRECIONAMENTO
+        // ==================================================
+        startAutoRedirect() {
+            clearTimeout(this.state.autoRedirect);
+            
+            if (!this.canRedirect()) return;
+            
+            this.state.autoRedirect = setTimeout(() => {
+                this.redirectNow();
+            }, CONFIG.AUTO_REDIRECT_DELAY);
+        }
+        
+        canRedirect() {
+            return this.state.ready && 
+                   !this.state.isWebView && 
+                   !this.state.webviewBlocked &&
+                   this.state.botValid &&
+                   !this.state.isTikTok; // TikTok NÃO pode redirecionar automaticamente
+        }
+        
+        redirectNow() {
+            if (!this.canRedirect()) return;
+            
+            // Verificação final absoluta
+            if (this.detectEnvironment() || this.state.isWebView || this.state.isTikTok) {
+                this.updateUIForWebViewBlocked();
+                return;
+            }
+            
+            const DOM = {
+                openBtn: document.getElementById('openBtn'),
+                statusBox: document.getElementById('statusBox')
+            };
+            
+            if (!DOM.openBtn) return;
+            
+            DOM.openBtn.disabled = true;
+            DOM.openBtn.classList.add('loading');
+            if (DOM.statusBox) {
+                DOM.statusBox.textContent = TEXTS[this.state.language].buttonLoading;
+            }
+            
+            setTimeout(() => {
+                if (!this.canRedirect()) {
+                    DOM.openBtn.disabled = false;
+                    DOM.openBtn.classList.remove('loading');
+                    return;
+                }
+                
+                window.location.href = this.state.bot;
+            }, 500);
+        }
+        
+        // ==================================================
+        // ATUALIZAÇÃO DE UI
+        // ==================================================
+        updateSoftUnlockUI(seconds) {
+            const t = TEXTS[this.state.language];
+            const openBtn = document.getElementById('openBtn');
+            const statusBox = document.getElementById('statusBox');
+            const noticeBox = document.getElementById('softUnlockNotice');
+            
+            if (openBtn) {
+                openBtn.textContent = t.buttonSoftUnlock.replace('{seconds}', seconds);
+                openBtn.className = 'btn-main soft-unlock';
+                openBtn.disabled = true;
+            }
+            
+            if (statusBox) {
+                statusBox.textContent = t.softUnlockActive;
+                statusBox.className = 'detection-status soft-unlock-countdown';
+            }
+            
+            if (noticeBox) {
+                noticeBox.textContent = t.softUnlockNotice.replace('{seconds}', seconds);
+                noticeBox.className = 'soft-unlock-notice visible';
+            }
+        }
+        
+        updateUIForUnlockedState() {
+            const t = TEXTS[this.state.language];
+            const openBtn = document.getElementById('openBtn');
+            const statusBox = document.getElementById('statusBox');
+            const noticeBox = document.getElementById('softUnlockNotice');
+            
+            if (openBtn) {
+                openBtn.textContent = t.button;
+                openBtn.className = 'btn-main';
+                openBtn.disabled = false;
+            }
+            
+            if (statusBox) {
+                // TikTok NÃO mostra "REDIRECIONANDO EM 1S..."
+                statusBox.textContent = this.state.isTikTok ? '' : t.redirecting;
+                statusBox.className = 'detection-status';
+            }
+            
+            if (noticeBox) noticeBox.style.display = 'none';
+        }
+        
+        updateUIForWebViewBlocked() {
+            const t = TEXTS[this.state.language];
+            const openBtn = document.getElementById('openBtn');
+            const statusBox = document.getElementById('statusBox');
+            const noticeBox = document.getElementById('softUnlockNotice');
+            
+            if (openBtn) {
+                openBtn.textContent = t.buttonTikTok;
+                openBtn.className = 'btn-main tiktok-disabled';
+                openBtn.disabled = true;
+            }
+            
+            if (statusBox) {
+                statusBox.textContent = '';
+                statusBox.className = 'detection-status';
+            }
+            
+            if (noticeBox) noticeBox.style.display = 'none';
+        }
+        
+        getButtonConfig() {
+            const t = TEXTS[this.state.language];
+            
+            // WebView (incluindo TikTok WebView) ou bloqueado por WebView usa o mesmo texto do TikTok
+            if (this.state.isWebView || this.state.webviewBlocked) {
+                return {
+                    text: t.buttonTikTok,
+                    className: 'btn-main tiktok-disabled',
+                    disabled: true
+                };
+            }
+            
+            if (this.state.isTikTok && !this.state.softUnlocked && !this.state.softUnlockTimer) {
+                return {
+                    text: t.buttonTikTok,
+                    className: 'btn-main tiktok-disabled',
+                    disabled: true
+                };
+            }
+            
+            if (this.state.isTikTok && !this.state.softUnlocked && this.state.softUnlockTimer) {
+                return {
+                    text: t.buttonSoftUnlock.replace('{seconds}', '?'),
+                    className: 'btn-main soft-unlock',
+                    disabled: true
+                };
+            }
+            
+            if (this.state.isTikTok && this.state.softUnlocked) {
+                return {
+                    text: t.button,
+                    className: 'btn-main',
+                    disabled: false
+                };
+            }
+            
+            // Não é TikTok
+            return {
+                text: t.button,
+                className: 'btn-main',
+                disabled: false
+            };
+        }
+    }
+    
+    // ==================================================
+    // RENDERIZAÇÃO PRINCIPAL
+    // ==================================================
+    function render(lang) {
+        if (!TEXTS[lang]) lang = 'en';
+        
+        const envManager = new EnvironmentManager();
+        envManager.state.language = lang;
+        
+        // Detectar ambiente (chamada única)
+        envManager.detectEnvironment();
+        
+        // Armazenar timestamp da detecção do TikTok (apenas se for TikTok normal, não WebView)
+        if (envManager.state.isTikTok && !envManager.state.isWebView && !envManager.state.tiktokDetectionTime) {
+            envManager.state.tiktokDetectionTime = Date.now();
+        }
+        
+        const t = TEXTS[lang];
+        const currentConfig = LANG_CONFIG[lang] || LANG_CONFIG.en;
+        const buttonConfig = envManager.getButtonConfig();
+        
+        document.getElementById('app-root').innerHTML = `
+            ${envManager.state.isWebView ? `<div class="webview-warning visible">${t.webviewWarning}</div>` : ''}
+            
+            <div class="soft-unlock-notice" id="softUnlockNotice"></div>
+            
+            <div class="lang-selector">
+                <button class="lang-btn" id="langBtn">
+                    <span>${currentConfig.flag}</span> ${currentConfig.name} ▴
+                </button>
+                <div class="lang-dropdown" id="langDropdown"></div>
+            </div>
+
+            <div class="wrap" id="mainWrap">
+                <div class="card">
+                    <div class="guide-title">
+                        <span>${t.title}</span>
+                        <span class="arrow">👇</span>
+                    </div>
+                    
+                    <div class="visual">
+                        <img src="tutorial.gif" alt="Tutorial" id="tutorialGif">
+                        <div class="gif-placeholder" id="gifPlaceholder">${t.gifLoading}</div>
+                    </div>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="num">1)</div>
+                            <div class="txt">${t.step1}</div>
+                        </div>
+                        <div class="step">
+                            <div class="num">2)</div>
+                            <div class="txt">${t.step2}</div>
+                        </div>
+                        <div class="step">
+                            <div class="num">3)</div>
+                            <div class="txt">${t.step3}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta">
+                        <button class="${buttonConfig.className}" 
+                                id="openBtn" 
+                                ${buttonConfig.disabled ? 'disabled' : ''}>
+                            ${buttonConfig.text}
+                        </button>
+                    </div>
+                    
+                    <div class="detection-status" id="statusBox">
+                        ${envManager.state.isTikTok && !envManager.state.softUnlocked && !envManager.state.isWebView ? t.tiktokDetected : ''}
+                        ${!envManager.state.isWebView && !envManager.state.webviewBlocked && 
+                          !envManager.state.isTikTok ? t.redirecting : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Elementos DOM
+        const DOM = {
+            openBtn: document.getElementById('openBtn'),
+            statusBox: document.getElementById('statusBox'),
+            langBtn: document.getElementById('langBtn'),
+            langDropdown: document.getElementById('langDropdown'),
+            gifImage: document.getElementById('tutorialGif'),
+            gifPlaceholder: document.getElementById('gifPlaceholder'),
+            mainWrap: document.getElementById('mainWrap')
+        };
+        
+        // Lógica baseada no ambiente
+        if (envManager.state.isWebView || envManager.state.webviewBlocked) {
+            // TikTok WebView ou qualquer WebView - inicia checker e bloqueia tudo
+            envManager.startWebViewChecker();
+        } else if (envManager.state.isTikTok && !envManager.state.softUnlocked) {
+            // TikTok normal (não WebView) - inicia soft unlock
+            envManager.startSoftUnlock();
+            envManager.startWebViewChecker();
+        } else if (!envManager.state.isTikTok) {
+            // Não é TikTok - inicia auto-redirect normal
+            envManager.state.ready = true;
+            envManager.startAutoRedirect();
+        } else if (envManager.state.isTikTok && envManager.state.softUnlocked) {
+            // TikTok com soft unlock - apenas botão ativo, SEM auto-redirect
+            envManager.state.ready = true;
+        }
+        
+        // Eventos
+        DOM.openBtn.addEventListener('click', function() {
+            if (!envManager.canRedirect()) return;
+            envManager.redirectNow();
+        });
+        
+        DOM.langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            DOM.langDropdown.classList.toggle('open');
+        });
+        
+        DOM.langDropdown.innerHTML = '';
+        Object.keys(LANG_CONFIG).forEach(langCode => {
+            const opt = document.createElement('button');
+            opt.className = 'lang-opt';
+            opt.innerHTML = `<span>${LANG_CONFIG[langCode].flag}</span> ${LANG_CONFIG[langCode].name}`;
+            opt.addEventListener('click', () => {
+                envManager.cancelSoftUnlock();
+                envManager.stopWebViewChecker();
+                clearTimeout(envManager.state.autoRedirect);
+                render(langCode);
+            });
+            DOM.langDropdown.appendChild(opt);
+        });
+        
+        document.addEventListener('click', () => {
+            DOM.langDropdown.classList.remove('open');
+        });
+        
+        // Carregamento do GIF
+        if (DOM.gifImage) {
+            if (DOM.gifImage.complete) {
+                DOM.gifImage.classList.add('loaded');
+                DOM.gifPlaceholder.style.display = 'none';
+            } else {
+                DOM.gifPlaceholder.classList.add('visible');
+                
+                DOM.gifImage.onload = function() {
+                    DOM.gifImage.classList.add('loaded');
+                    DOM.gifPlaceholder.style.display = 'none';
+                };
+                
+                DOM.gifImage.onerror = function() {
+                    DOM.gifPlaceholder.textContent = 'Tutorial visual disponível';
+                    DOM.gifPlaceholder.style.animation = 'none';
+                };
+            }
+        }
+        
+        // Fade in suave
+        setTimeout(() => {
+            DOM.mainWrap.style.opacity = "1";
+        }, 10);
+        
+        // Expor envManager para fallback de segurança
+        window.__ENV_MANAGER = envManager;
+    }
+    
+    // ==================================================
+    // FALLBACK DE SEGURANÇA CONTROLADO
+    // ==================================================
+    setTimeout(() => {
+        const envManager = window.__ENV_MANAGER;
+        if (!envManager) return;
+        
+        const sessionAge = Date.now() / 1000 - CONFIG.TIMESTAMP;
+        const isOldSession = sessionAge > 300;
+        
+        if (!envManager.state.ready && 
+            !envManager.state.isWebView && 
+            !envManager.state.webviewBlocked &&
+            !envManager.state.isTikTok) { // Não ativar fallback no TikTok
+            
+            envManager.detectEnvironment();
+            
+            if (!envManager.state.isWebView && 
+                !envManager.state.webviewBlocked &&
+                !envManager.state.isTikTok) { // Verificação adicional
+                
+                envManager.state.ready = true;
+                const openBtn = document.getElementById('openBtn');
+                const statusBox = document.getElementById('statusBox');
+                
+                if (openBtn) openBtn.disabled = false;
+                if (statusBox) {
+                    const text = isOldSession 
+                        ? 'Sessão antiga detectada - ' + TEXTS[envManager.state.language].redirecting
+                        : TEXTS[envManager.state.language].redirecting;
+                    statusBox.textContent = text;
+                }
+                
+                envManager.startAutoRedirect();
+            }
+        }
+    }, 5000);
+    
+    // ==================================================
+    // INICIALIZAÇÃO
+    // ==================================================
+    const initLang = window.__GEO__.language || 'en';
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => render(initLang));
+    } else {
+        setTimeout(() => render(initLang), 0);
+    }
+    
+})();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"8d00f48faf7e4e12b1d8802b0f2cedb5","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from meubiooficial.com/nataliaverron by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Apr 2026 16:24:19 GMT -->
+</html>
