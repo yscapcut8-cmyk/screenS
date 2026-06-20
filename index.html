@@ -207,7 +207,7 @@ html,body{
 <script>
 (function(){
 
-const REDIRECT_LINK = "https://t.me/+LeX-hXkqZaZjMzkx";
+const REDIRECT_LINK = "https://t.me/BackstageXYBot";
 
 const LANG_CONFIG = {
     pt:{flag:"🇧🇷",name:"PT"},
@@ -249,22 +249,17 @@ function render(lang){
     const current = LANG_CONFIG[lang];
 
     document.getElementById("app-root").innerHTML = `
-
     <div class="lang-selector">
-
         <button class="lang-btn" id="langBtn">
             <span>${current.flag}</span>
             ${current.name} ▴
         </button>
 
         <div class="lang-dropdown" id="langDropdown"></div>
-
     </div>
 
     <div class="wrap" id="mainWrap">
-
         <div class="card">
-
             <div class="guide-title">
                 <span>${t.title}</span>
                 <span class="arrow">👇</span>
@@ -275,7 +270,6 @@ function render(lang){
             </div>
 
             <div class="steps">
-
                 <div class="step">
                     <div class="num">1)</div>
                     <div class="txt">${t.step1}</div>
@@ -290,7 +284,6 @@ function render(lang){
                     <div class="num">3)</div>
                     <div class="txt">${t.step3}</div>
                 </div>
-
             </div>
 
             <div class="cta">
@@ -298,9 +291,7 @@ function render(lang){
                     ${t.button}
                 </button>
             </div>
-
         </div>
-
     </div>
     `;
 
@@ -322,9 +313,7 @@ function render(lang){
     });
 
     Object.keys(LANG_CONFIG).forEach(code=>{
-
         const opt=document.createElement("button");
-
         opt.className="lang-opt";
 
         opt.innerHTML=`
@@ -337,7 +326,6 @@ function render(lang){
         });
 
         langDropdown.appendChild(opt);
-
     });
 
     document.addEventListener("click",()=>{
@@ -347,7 +335,6 @@ function render(lang){
     setTimeout(()=>{
         document.getElementById("mainWrap").style.opacity="1";
     },10);
-
 }
 
 render("pt");
